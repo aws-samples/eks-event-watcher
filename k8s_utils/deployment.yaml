@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpe
+  labels:
+    app: cpe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpe        
+  template:
+    metadata:
+      labels:
+        app: cpe
+    spec:
+      containers:
+      - name: cpe
+        image: public.ecr.aws/m8u2y2m7/eks-event-watcher:latest
