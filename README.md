@@ -1,4 +1,3 @@
-## My Project
 
 # Managing Amazon EKS control plane events
 
