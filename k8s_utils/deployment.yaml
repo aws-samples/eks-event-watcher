@@ -17,3 +17,4 @@ spec:
       containers:
       - name: cpe
         image: public.ecr.aws/m8u2y2m7/eks-event-watcher:latest
+        imagePullPolicy: Always
