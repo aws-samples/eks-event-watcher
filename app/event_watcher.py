@@ -12,6 +12,11 @@ config.load_incluster_config()
 v1 = client.CoreV1Api()
 
 #Block to get the pod events
+def lookup_all_events():
+    for event in watch.Watch().stream(v1.list_event_for_all_namespaces,timeout_seconds=10):
+           print( "Event: %s %s %s %s %s %s" % ( event["raw_object"]["kind"],event["raw_object"]["metadata"]["namespace"],event["raw_object"]["involvedObject"]["kind"],event["raw_object"]["involvedObject"]["name"],event["raw_object"]["reason"],event["raw_object"]["message"]))
+
+#Block to get the pod events
 def lookup_pod_events():
     for event in watch.Watch().stream(v1.list_pod_for_all_namespaces, timeout_seconds=10):
            print( "Event: %s %s %s" % ( event["type"],event["object"].kind,event["object"].metadata.name)) 
@@ -38,6 +43,9 @@ def lookup_pvc_events():
 
 
 def lookup_events(sc):
+    if "event" in optionsList:
+        #Get all events
+        lookup_all_events()
     if "pod" in optionsList:
         #Get pod events
         lookup_pod_events()
@@ -69,4 +77,4 @@ if __name__ == '__main__':
         s.run()
     else:
         print("Wrong number of arguments!")
-        print("Usage: python event_watcher.py [pod,node,namespace,service,pvc]")
+        print("Usage: python event_watcher.py [event,pod,node,namespace,service,pvc]")
