@@ -12,4 +12,4 @@ COPY ./requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt
 
 #Run the script
-CMD ["python","-u","event_watcher.py","event,pod,namespace,node,service,pvc"]
+ENTRYPOINT ["python","-u","event_watcher.py"]
