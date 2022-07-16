@@ -12,6 +12,7 @@ rules:
   - nodes
   - services
   - persistentvolumeclaims
+  - events
   verbs:
   - list
   - watch
