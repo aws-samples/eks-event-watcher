@@ -18,3 +18,5 @@ spec:
       - name: cpe
         image: public.ecr.aws/m8u2y2m7/eks-event-watcher:latest
         imagePullPolicy: Always
+        #uncomment below line to override the options
+        #args: ["-interval","30","-list","event,pod,node"]
