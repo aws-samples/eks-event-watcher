@@ -14,7 +14,7 @@ v1 = client.CoreV1Api()
 #Block to get the pod events
 def lookup_all_events():
     for event in watch.Watch().stream(v1.list_event_for_all_namespaces,timeout_seconds=10):
-           print( "Event: %s %s %s %s %s %s" % ( event["raw_object"]["kind"],event["raw_object"]["metadata"]["namespace"],event["raw_object"]["involvedObject"]["kind"],event["raw_object"]["involvedObject"]["name"],event["raw_object"]["reason"],event["raw_object"]["message"]))
+           print( "Event: %s, Namespace: %s,Object: %s,Name: %s,Reason: %s,Message: %s" % ( event["raw_object"]["kind"],event["raw_object"]["metadata"]["namespace"],event["raw_object"]["involvedObject"]["kind"],event["raw_object"]["involvedObject"]["name"],event["raw_object"]["reason"],event["raw_object"]["message"]))
 
 #Block to get the pod events
 def lookup_pod_events():
