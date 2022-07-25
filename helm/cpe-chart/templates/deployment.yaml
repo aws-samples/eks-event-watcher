@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "cpe-chart.fullname" . }}
+  name: cpe
   labels:
     {{- include "cpe-chart.labels" . | nindent 4 }}
 spec:
@@ -21,7 +21,7 @@ spec:
         {{- include "cpe-chart.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: cpe
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: {{ .Values.image.repository }}

@@ -10,8 +10,9 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-nameOverride: ""
-fullnameOverride: ""
+cpe-chart:  
+  nameOverride: "cpe"
+  fullnameOverride: "cpe"
 
 serviceAccount:
   # Specifies whether a service account should be created
