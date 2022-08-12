@@ -16,7 +16,7 @@ For this walkthrough, you should have the following prerequisites:
 
 ## Solution flow
 
-<img width="639" alt="image" src="https://user-images.githubusercontent.com/1725781/159606567-abc3273c-2803-40a3-ac3b-dd4bbbd67334.png">
+<img width="639" alt="image" src="https://user-images.githubusercontent.com/1725781/184262584-24302dee-2bf6-409e-9de5-c48a5578661c.jpg">
 
 
 
